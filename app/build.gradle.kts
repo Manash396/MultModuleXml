@@ -1,17 +1,12 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.myapp.android.application)
 }
 
 android {
     namespace = "com.mk.multimodulexml"
-    compileSdk {
-        version = release(37)
-    }
 
     defaultConfig {
         applicationId = "com.mk.multimodulexml"
-        minSdk = 26
-        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 

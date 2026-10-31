@@ -12,6 +12,7 @@ navigationFragmentKtx = "2.10.2"
 navigationUiKtx = "2.10.2"
 
 [libraries]
+android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -26,4 +27,6 @@ androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
-
+myapp-android-application = { id = "myapp.android.application" }
+myapp-android-library = { id = "myapp.android.library" }
+myapp-android-feature = { id = "myapp.android.feature" }
