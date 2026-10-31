@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.mk.feature.home.R
+import com.mk.navigation.FeatureNavigator
 
 class HomeDetailFragment :
     Fragment(R.layout.fragment_home_detail) {
@@ -16,9 +17,12 @@ class HomeDetailFragment :
     ) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.btnBack)
+        view.findViewById<Button>(R.id.btnProfileEdit)
             .setOnClickListener {
-                findNavController().navigateUp()
+                val navigator =
+                    requireActivity() as FeatureNavigator
+
+                navigator.openProfileEdit()
             }
     }
 }
