@@ -11,6 +11,9 @@
         android:name="com.mk.profile.ProfileFragment"
         android:label="Profile">
 
+        <deepLink
+            app:uri="mkapp://profile/view"/>
+
         <action
             android:id="@+id/action_profile_to_edit"
             app:destination="@id/editProfileFragment" />
@@ -20,6 +23,11 @@
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.mk.profile.EditProfileFragment"
-        android:label="Edit Profile" />
+        android:label="Edit Profile" >
+
+        <deepLink
+            app:uri="mkapp://profile/edit"/>
+
+    </fragment>
 
 </navigation>

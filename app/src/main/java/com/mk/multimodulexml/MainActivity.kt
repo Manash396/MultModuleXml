@@ -8,11 +8,12 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.mk.multimodulexml.navigation.NavigationDispatcher
 import com.mk.navigation.FeatureNavigator
 
 class MainActivity : AppCompatActivity(), FeatureNavigator {
 
-    private lateinit var navController: NavController
+    private lateinit var navDispatcher: NavigationDispatcher
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,24 +25,16 @@ class MainActivity : AppCompatActivity(), FeatureNavigator {
                 R.id.nav_host_fragment
             ) as NavHostFragment
 
-        navController = navHostFragment.navController
+        navDispatcher = NavigationDispatcher(navHostFragment.navController)
     }
 
-    override fun openHome() {
-        navController.navigate(com.mk.feature.home.R.id.home_graph)
+    // this function can be called by the feragment
+    override fun navigate(route: String) {
+        navDispatcher.navigate(route)
     }
 
-    override fun openProfile() {
-        navController.navigate(com.mk.feature.profile.R.id.profile_graph)
+    override fun navigateBack() {
+        navDispatcher.navigateBack()
     }
 
-    override fun openProfileEdit() {
-        navController.navigate(
-            com.mk.feature.profile.R.id.profile_graph,
-            Bundle().apply {
-                putBoolean("open_edit", true)
-            }
-        )
-
-    }
 }

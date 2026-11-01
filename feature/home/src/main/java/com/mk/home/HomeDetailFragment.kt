@@ -22,7 +22,7 @@ class HomeDetailFragment :
                 val navigator =
                     requireActivity() as FeatureNavigator
 
-                navigator.openProfileEdit()
+                navigator.navigate("mkapp://profile/edit")
             }
     }
 }

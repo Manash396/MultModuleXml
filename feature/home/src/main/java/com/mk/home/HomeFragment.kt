@@ -37,14 +37,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             val navigator =
                 requireActivity() as FeatureNavigator
 
-            navigator.openProfile()
+            navigator.navigate("mkapp://profile/view")
         }
 
         btnProfileEdit.setOnClickListener {
             val navigator =
                 requireActivity() as FeatureNavigator
 
-            navigator.openProfileEdit()
+            navigator.navigate("mkapp://profile/edit")
         }
 
     }

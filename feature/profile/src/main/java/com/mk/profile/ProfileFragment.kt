@@ -55,7 +55,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 val navigator =
                     requireActivity() as FeatureNavigator
 
-                navigator.openHome()
+                navigator.navigateBack()
             }
     }
 }
